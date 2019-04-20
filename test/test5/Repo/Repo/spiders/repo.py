@@ -15,4 +15,6 @@ class RepoSpider(scrapy.Spider):
             item['repo_name'] = repo.xpath('.//a[@itemprop="name codeRepository"]/text()').extract_first()
             item['update_time'] = repo.xpath('.//relative-time/@datetime').extract_first()
 
+            print(item)
+
             yield item
